@@ -5,13 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.navigation.fragment.findNavController
-import com.example.testfragments.databinding.FragmentFirstBinding
+import com.example.testfragments.databinding.FragmentThirdBinding
 
-class FirstFragment : Fragment() {
 
-    private lateinit var binding: FragmentFirstBinding
+class ThirdFragment : Fragment() {
+
+
+    private lateinit var binding: FragmentThirdBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,17 +24,13 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentFirstBinding.inflate(layoutInflater,container,false)
-
-        binding.button.setOnClickListener{
-            findNavController().navigate(R.id.action_firstFragment_to_secondFragment)
-        }
-
-        binding.btnThird.setOnClickListener{
-            findNavController().navigate(R.id.action_firstFragment_to_thirdFragment)
+        binding = FragmentThirdBinding.inflate(layoutInflater, container, false)
+        binding.btnBackThird.setOnClickListener{
+            findNavController().navigateUp()
         }
 
         return binding.root
     }
+
 
 }
