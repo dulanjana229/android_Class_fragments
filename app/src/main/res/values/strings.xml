@@ -4,4 +4,13 @@
     <string name="hello_blank_fragment">First Fragment</string>
     <string name="second_fragment">Second Fragment</string>
     <string name="fragment_third">Third Fragment</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="email">Email</string>
+    <string name="back">Back</string>
+    <string name="second">Second</string>
+    <string name="third">Third</string>
+    <string name="home">Home</string>
+    <string name="friends">friends</string>
+    <string name="settings">settings</string>
 </resources>

@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.android.navigation.safe.args.kotlin)
 }
 
 android {
@@ -38,8 +39,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-}
 
+
+}
 
 dependencies {
     val nav_version = "2.8.4"
@@ -68,7 +70,10 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }

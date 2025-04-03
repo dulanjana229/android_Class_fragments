@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.testfragments.databinding.FragmentSecondBinding
 
 
 class SecondFragment : Fragment() {
 
     private lateinit var binding: FragmentSecondBinding
+    private val args by navArgs<SecondFragmentArgs>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,18 @@ class SecondFragment : Fragment() {
         binding.btnBack.setOnClickListener{
             findNavController().navigateUp()
         }
+
+//        val name = requireArguments().getString("name")
+//        val age = requireArguments().getString("age")
+//        val email = requireArguments().getString("email")
+
+        val name = args.name
+        val age = args.age
+        val email = args.email
+
+        binding.txtName.text = name
+        binding.txtAge.text = age
+        binding.txtEmail.text = email
 
         return binding.root
     }
