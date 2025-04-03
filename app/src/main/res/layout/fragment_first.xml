@@ -8,6 +8,7 @@
     android:id="@+id/constrain_layout">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -18,20 +19,22 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        app:layout_constraintVertical_bias="0.263"
         tools:layout_conversion_absoluteHeight="731dp"
         tools:layout_conversion_absoluteWidth="411dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnSecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="82dp"
         android:backgroundTint="@android:color/holo_orange_light"
-        android:text="Second"
+        android:text="@string/second"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnThird"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,10 +47,49 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/design_default_color_error"
-        android:text="Third"
+        android:text="@string/third"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/btnSecond"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="211dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="64dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextAge"
+        android:layout_width="219dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/age"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/editTextName"
+        app:layout_constraintStart_toStartOf="@+id/editTextName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="219dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/editTextAge"
+        app:layout_constraintStart_toStartOf="@+id/editTextAge"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAge" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
