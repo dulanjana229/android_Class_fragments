@@ -7,12 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.os.bundleOf
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.testfragments.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
 
     private lateinit var binding: FragmentFirstBinding
+    private val mainViewModel:MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +28,15 @@ class FirstFragment : Fragment() {
     ): View? {
 
         binding = FragmentFirstBinding.inflate(layoutInflater,container,false)
+
+        mainViewModel.userData.observe(viewLifecycleOwner, Observer {
+            binding.editTextName.setText(it.name.toString())
+            binding.editTextAge.setText(it.age.toString())
+            binding.editTextEmail.setText(it.email.toString())
+        })
+
+        val user = User("Dulanjana", 22, "Colombo", "dulanjana@gmail.com")
+        mainViewModel.setDate(user)
 
         binding.btnSecond.setOnClickListener{
 
